@@ -1,8 +1,13 @@
 "use client";
 
+import { useState } from "react";
+import Input from "@/components/Input";
+import Checkbox from "@/components/Checkbox";
 import Button from "@/components/Button";
 
-export default function ButtonPage() {
+export default function FormsPage() {
+  const [formData, setFormData] = useState({ name: "", email: "", agree: false });
+
   return (
     <div className="max-w-4xl">
       <div className="mb-12">
@@ -10,13 +15,13 @@ export default function ButtonPage() {
           className="text-6xl font-bold text-black dark:text-white mb-4 leading-none uppercase"
           style={{ fontFamily: "var(--font-marker)" }}
         >
-          BUTTON
+          FORMS
         </h1>
         <p
           className="text-xl text-[#6b6b6b] dark:text-[#a0a0a0]"
           style={{ fontFamily: "var(--font-inter)" }}
         >
-          Bold, square, handwritten. Buttons that look like they were stamped with intention.
+          Input fields and checkboxes with bold borders. Built for clarity.
         </p>
       </div>
 
@@ -25,13 +30,23 @@ export default function ButtonPage() {
           className="text-3xl font-bold text-black dark:text-white mb-6 uppercase"
           style={{ fontFamily: "var(--font-marker)" }}
         >
-          Variants
+          Input
         </h2>
-        <div className="flex flex-wrap gap-4 p-8 bg-white dark:bg-[#1a1a1a] border-3 border-black dark:border-white">
-          <Button variant="primary">Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="outline">Outline</Button>
-          <Button variant="destructive">Delete</Button>
+        <div className="space-y-6 p-8 bg-white dark:bg-[#1a1a1a] border-3 border-black dark:border-white">
+          <Input
+            label="Name"
+            placeholder="Enter your name"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          />
+          <Input
+            label="Email"
+            type="email"
+            placeholder="you@example.com"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          />
+          <Input label="Error State" error="This field is required" />
         </div>
       </section>
 
@@ -40,12 +55,40 @@ export default function ButtonPage() {
           className="text-3xl font-bold text-black dark:text-white mb-6 uppercase"
           style={{ fontFamily: "var(--font-marker)" }}
         >
-          Sizes
+          Checkbox
         </h2>
-        <div className="flex flex-wrap items-center gap-4 p-8 bg-white dark:bg-[#1a1a1a] border-3 border-black dark:border-white">
-          <Button size="sm">Small</Button>
-          <Button size="md">Medium</Button>
-          <Button size="lg">Large</Button>
+        <div className="space-y-4 p-8 bg-white dark:bg-[#1a1a1a] border-3 border-black dark:border-white">
+          <Checkbox
+            label="I agree to the terms"
+            checked={formData.agree}
+            onChange={(e) => setFormData({ ...formData, agree: e.target.checked })}
+          />
+          <Checkbox label="Subscribe to updates" />
+          <Checkbox label="Receive notifications" defaultChecked />
+        </div>
+      </section>
+
+      <section className="mb-12">
+        <h2
+          className="text-3xl font-bold text-black dark:text-white mb-6 uppercase"
+          style={{ fontFamily: "var(--font-marker)" }}
+        >
+          Form Example
+        </h2>
+        <div className="p-8 bg-white dark:bg-[#1a1a1a] border-3 border-black dark:border-white max-w-2xl">
+          <form className="space-y-6">
+            <Input label="Full Name" placeholder="John Doe" />
+            <Input label="Email" type="email" placeholder="john@example.com" />
+            <Checkbox label="Subscribe to newsletter" />
+            <div className="flex gap-3 pt-4">
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+              <Button variant="outline" type="reset">
+                Clear
+              </Button>
+            </div>
+          </form>
         </div>
       </section>
 
@@ -58,11 +101,17 @@ export default function ButtonPage() {
         </h2>
         <div className="bg-black dark:bg-white p-6 border-3 border-black dark:border-white overflow-x-auto">
           <pre className="text-white dark:text-black text-sm" style={{ fontFamily: "var(--font-space-mono)" }}>
-            <code>{`import Button from "@/components/Button";
+            <code>{`import Input from "@/components/Input";
+import Checkbox from "@/components/Checkbox";
 
-<Button variant="primary" size="md">
-  Click me
-</Button>`}</code>
+<Input
+  label="Email"
+  type="email"
+  placeholder="you@example.com"
+  error="Invalid email"
+/>
+
+<Checkbox label="I agree" />`}</code>
           </pre>
         </div>
       </section>
@@ -82,6 +131,12 @@ export default function ButtonPage() {
                   className="px-4 py-4 text-left text-xs font-bold text-white dark:text-black uppercase tracking-wider"
                   style={{ fontFamily: "var(--font-space-mono)" }}
                 >
+                  Component
+                </th>
+                <th
+                  className="px-4 py-4 text-left text-xs font-bold text-white dark:text-black uppercase tracking-wider"
+                  style={{ fontFamily: "var(--font-space-mono)" }}
+                >
                   Prop
                 </th>
                 <th
@@ -90,35 +145,40 @@ export default function ButtonPage() {
                 >
                   Type
                 </th>
-                <th
-                  className="px-4 py-4 text-left text-xs font-bold text-white dark:text-black uppercase tracking-wider"
-                  style={{ fontFamily: "var(--font-space-mono)" }}
-                >
-                  Default
-                </th>
               </tr>
             </thead>
             <tbody className="bg-white dark:bg-[#1a1a1a]">
               <tr className="border-b-2 border-black/10 dark:border-white/10">
                 <td className="px-4 py-4 text-sm text-black dark:text-white font-bold" style={{ fontFamily: "var(--font-space-mono)" }}>
-                  variant
+                  Input
+                </td>
+                <td className="px-4 py-4 text-sm text-black dark:text-white font-bold" style={{ fontFamily: "var(--font-space-mono)" }}>
+                  label
                 </td>
                 <td className="px-4 py-4 text-sm text-[#6b6b6b] dark:text-[#a0a0a0]" style={{ fontFamily: "var(--font-space-mono)" }}>
-                  &quot;primary&quot; | &quot;secondary&quot; | &quot;outline&quot; | &quot;destructive&quot;
-                </td>
-                <td className="px-4 py-4 text-sm text-[#6b6b6b] dark:text-[#a0a0a0]" style={{ fontFamily: "var(--font-space-mono)" }}>
-                  &quot;primary&quot;
+                  string
                 </td>
               </tr>
               <tr className="border-b-2 border-black/10 dark:border-white/10">
                 <td className="px-4 py-4 text-sm text-black dark:text-white font-bold" style={{ fontFamily: "var(--font-space-mono)" }}>
-                  size
+                  Input
+                </td>
+                <td className="px-4 py-4 text-sm text-black dark:text-white font-bold" style={{ fontFamily: "var(--font-space-mono)" }}>
+                  error
                 </td>
                 <td className="px-4 py-4 text-sm text-[#6b6b6b] dark:text-[#a0a0a0]" style={{ fontFamily: "var(--font-space-mono)" }}>
-                  &quot;sm&quot; | &quot;md&quot; | &quot;lg&quot;
+                  string
+                </td>
+              </tr>
+              <tr>
+                <td className="px-4 py-4 text-sm text-black dark:text-white font-bold" style={{ fontFamily: "var(--font-space-mono)" }}>
+                  Checkbox
+                </td>
+                <td className="px-4 py-4 text-sm text-black dark:text-white font-bold" style={{ fontFamily: "var(--font-space-mono)" }}>
+                  label
                 </td>
                 <td className="px-4 py-4 text-sm text-[#6b6b6b] dark:text-[#a0a0a0]" style={{ fontFamily: "var(--font-space-mono)" }}>
-                  &quot;md&quot;
+                  string
                 </td>
               </tr>
             </tbody>

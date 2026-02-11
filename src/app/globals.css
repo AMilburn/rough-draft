@@ -12,14 +12,6 @@
   --light-gray: #d4d4d4;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --font-marker: var(--font-marker);
-  --font-mono: var(--font-space-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -53,7 +45,7 @@ body {
   pointer-events: none;
 }
 
-/* Scribbled circle accent */
+/* Scribbled circle accent (Use with Tailwind inline-block class) */
 .scribble-circle {
   position: relative;
 }

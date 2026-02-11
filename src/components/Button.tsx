@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline";
+  variant?: "primary" | "secondary" | "outline" | "destructive";
   size?: "sm" | "md" | "lg";
 }
 
@@ -18,6 +18,8 @@ export default function Button({
     primary: "bg-black text-white border-black hover:bg-white hover:text-black hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[4px_4px_0px_0px_#ff4444] focus:ring-black dark:bg-white dark:text-black dark:border-white dark:hover:bg-black dark:hover:text-white",
     secondary: "bg-[#ff4444] text-white border-[#ff4444] hover:bg-white hover:text-[#ff4444] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[4px_4px_0px_0px_black] focus:ring-[#ff4444]",
     outline: "bg-transparent border-black text-black hover:bg-black hover:text-white hover:translate-x-0.5 hover:translate-y-0.5 focus:ring-black dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black",
+    // destructive: "bg-[#ff4444] text-white border-black hover:bg-white hover:text-[#ff4444] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[6px_6px_0px_0px_black] focus:ring-[#ff4444] dark:border-white dark:hover:shadow-[6px_6px_0px_0px_white]",
+    destructive: "bg-[#ff4444] text-white border-[#ff4444] hover:bg-white hover:text-[#ff4444] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[4px_4px_0px_0px_[#ff4444]] focus:ring-[#ff4444] dark:bg-[#ff4444] dark:hover:bg-[#1a1a1a] dark:hover:text-[#ff4444]"
   };
 
   const sizes = {

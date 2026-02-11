@@ -7,6 +7,10 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Button", href: "/components/button" },
   { name: "Card", href: "/components/card" },
+  { name: "Forms", href: "/components/forms" },
+  { name: "Table", href: "/components/table" },
+  { name: "Modal", href: "/components/modal" },
+  { name: "Utilities", href: "/components/utilities" },
 ];
 
 export default function SideNav() {
