@@ -92,7 +92,6 @@ export default function Home() {
             style={{ fontFamily: "var(--font-space-mono)" }}
           >
             → Check the sidebar for components<br/>
-            → Visit the Playground to see iterations<br/>
             → Build something that doesn&apos;t look like everyone else
           </p>
         </section>
