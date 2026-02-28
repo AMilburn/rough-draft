@@ -11,6 +11,7 @@ const navigation = [
   { name: "Table", href: "/components/table" },
   { name: "Modal", href: "/components/modal" },
   { name: "Utilities", href: "/components/utilities" },
+  { name: "Scroll", href: "/components/scroll" },
 ];
 
 export default function SideNav() {
@@ -19,10 +20,16 @@ export default function SideNav() {
   return (
     <nav className="w-72 border-r-3 border-black dark:border-white min-h-screen p-8 bg-white dark:bg-[#1a1a1a]">
       <Link href="/" className="block mb-12">
-        <h2 className="text-3xl font-bold text-black dark:text-white mb-1" style={{ fontFamily: "var(--font-marker)" }}>
+        <h2
+          className="text-3xl font-bold text-black dark:text-white mb-1"
+          style={{ fontFamily: "var(--font-marker)" }}
+        >
           ROUGH DRAFT
         </h2>
-        <p className="text-xs text-[#6b6b6b] dark:text-[#a0a0a0] uppercase tracking-wider" style={{ fontFamily: "var(--font-space-mono)" }}>
+        <p
+          className="text-xs text-[#6b6b6b] dark:text-[#a0a0a0] uppercase tracking-wider"
+          style={{ fontFamily: "var(--font-space-mono)" }}
+        >
           organized chaos
         </p>
       </Link>
@@ -48,8 +55,12 @@ export default function SideNav() {
       </div>
 
       <div className="mt-12 pt-12 border-t-2 border-black/10 dark:border-white/10">
-        <p className="text-xs text-[#6b6b6b] dark:text-[#a0a0a0] leading-relaxed" style={{ fontFamily: "var(--font-inter)" }}>
-          A design system inspired by record stores, zines, and people who have the right idea but rough edges.
+        <p
+          className="text-xs text-[#6b6b6b] dark:text-[#a0a0a0] leading-relaxed"
+          style={{ fontFamily: "var(--font-inter)" }}
+        >
+          A design system inspired by record stores, zines, and people who have
+          the right idea but rough edges.
         </p>
       </div>
     </nav>
