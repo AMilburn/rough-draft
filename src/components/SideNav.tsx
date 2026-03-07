@@ -5,13 +5,18 @@ import { usePathname } from "next/navigation";
 
 const navigation = [
   { name: "Home", href: "/" },
+  { name: "AudioPlayer", href: "/components/audioplayer" },
+  { name: "Badge", href: "/components/badge" },
   { name: "Button", href: "/components/button" },
   { name: "Card", href: "/components/card" },
+  { name: "DropZone", href: "/components/dropzone" },
   { name: "Forms", href: "/components/forms" },
-  { name: "Table", href: "/components/table" },
   { name: "Modal", href: "/components/modal" },
-  { name: "Utilities", href: "/components/utilities" },
   { name: "Scroll", href: "/components/scroll" },
+  { name: "Table", href: "/components/table" },
+  { name: "Tabs", href: "/components/tabs" },
+  { name: "Toast", href: "/components/toast" },
+  { name: "Utilities", href: "/components/utilities" },
 ];
 
 export default function SideNav() {
@@ -36,16 +41,17 @@ export default function SideNav() {
 
       <div className="space-y-2">
         {navigation.map((item) => {
-          const isActive = pathname === item.href;
+          // Normalize paths by removing trailing slashes for comparison
+          const normalize = (path: string) => path.replace(/\/$/, "") || "/";
+          const isActive = normalize(pathname) === normalize(item.href);
           return (
             <Link
               key={item.name}
               href={item.href}
-              className={`block px-3 py-2 text-sm font-bold uppercase tracking-wide transition-all border-l-4 ${
-                isActive
-                  ? "border-[#ff4444] bg-black/5 dark:bg-white/10 text-black dark:text-white translate-x-1"
-                  : "border-transparent text-[#6b6b6b] dark:text-[#a0a0a0] hover:border-black/20 dark:hover:border-white/20 hover:translate-x-1 hover:text-black dark:hover:text-white"
-              }`}
+              className={`block px-3 py-2 text-sm font-bold uppercase tracking-wide transition-all border-l-4 ${isActive
+                ? "border-[#ff4444] bg-black/5 dark:bg-white/10 text-black dark:text-white translate-x-1"
+                : "border-transparent text-[#6b6b6b] dark:text-[#a0a0a0] hover:border-black/20 dark:hover:border-white/20 hover:translate-x-1 hover:text-black dark:hover:text-white"
+                }`}
               style={{ fontFamily: "var(--font-space-mono)" }}
             >
               {item.name}

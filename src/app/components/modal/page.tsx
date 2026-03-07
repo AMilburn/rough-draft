@@ -32,7 +32,7 @@ export default function ModalPage() {
         >
           Examples
         </h2>
-        <div className="space-y-4 p-8 bg-white dark:bg-[#1a1a1a] border-3 border-black dark:border-white">
+        <div className="flex gap-4 flex-wrap p-8 bg-white dark:bg-[#1a1a1a] border-3 border-black dark:border-white">
           <Button onClick={() => setIsOpen(true)} variant="primary">
             Open Modal
           </Button>
@@ -42,15 +42,11 @@ export default function ModalPage() {
         </div>
       </section>
 
-      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} title="Example Modal">
-        <p
-          className="text-[#6b6b6b] dark:text-[#a0a0a0] mb-4"
-          style={{ fontFamily: "var(--font-inter)" }}
-        >
-          This is a modal dialog with a title, content, and optional footer actions.
-          Click the X button or backdrop to close.
-        </p>
-        <footer>
+      <Modal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title="Example Modal"
+        footer={
           <>
             <Button variant="outline" onClick={() => setIsOpen(false)}>
               Cancel
@@ -59,7 +55,15 @@ export default function ModalPage() {
               Confirm
             </Button>
           </>
-        </footer>
+        }
+      >
+        <p
+          className="text-[#6b6b6b] dark:text-[#a0a0a0]"
+          style={{ fontFamily: "var(--font-inter)" }}
+        >
+          This is a modal dialog with a title, content, and optional footer actions.
+          Click the X button or backdrop to close.
+        </p>
       </Modal>
 
       <Modal

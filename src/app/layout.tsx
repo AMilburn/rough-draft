@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Permanent_Marker, Space_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import SideNav from "@/components/SideNav";
+import { ToastProvider } from "@/components/Toast";
 
 const permanentMarker = Permanent_Marker({
   weight: ["400"],
@@ -36,12 +37,14 @@ export default function RootLayout({
         className={`${permanentMarker.variable} ${spaceMono.variable} ${inter.variable} antialiased bg-[#f9f6f1] dark:bg-[#0a0a0a]`}
         style={{ fontFamily: "var(--font-inter)" }}
       >
-        <div className="flex">
-          <SideNav />
-          <main className="flex-1 p-8">
-            {children}
-          </main>
-        </div>
+        <ToastProvider>
+          <div className="flex">
+            <SideNav />
+            <main className="flex-1 p-8">
+              {children}
+            </main>
+          </div>
+        </ToastProvider>
       </body>
     </html>
   );
