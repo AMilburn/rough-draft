@@ -1,0 +1,98 @@
+/* ============================================================
+   Rough Draft — Design Tokens
+   Override any variable inside :root {} in your own CSS to theme.
+   Note: Load fonts via your app's preferred method (next/font,
+   <link> tag, or @import in your own CSS entry point).
+   ============================================================ */
+
+
+:root {
+  /* ── Colour ─────────────────────────────────────────────── */
+  --rd-ink: #000000;
+  /* primary text / border */
+  --rd-paper: #ffffff;
+  /* component backgrounds */
+  --rd-accent: #ff4444;
+  /* red highlight / focus */
+  --rd-bg: #f9f6f1;
+  /* page background */
+  --rd-muted: #6b6b6b;
+  /* secondary text */
+  --rd-muted-bg: rgba(0, 0, 0, 0.06);
+
+  /* Semantic status colours */
+  --rd-success: #22c55e;
+  --rd-warning: #f59e0b;
+  --rd-info: #3b82f6;
+  --rd-error: #ff4444;
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --rd-font-display: 'Permanent Marker', cursive;
+  --rd-font-mono: 'Space Mono', monospace;
+  --rd-font-body: Inter, system-ui, -apple-system, sans-serif;
+
+  --rd-text-xs: 0.75rem;
+  /* 12px */
+  --rd-text-sm: 0.875rem;
+  /* 14px */
+  --rd-text-base: 1rem;
+  /* 16px */
+  --rd-text-lg: 1.125rem;
+  /* 18px */
+  --rd-text-xl: 1.25rem;
+  /* 20px */
+  --rd-text-2xl: 1.5rem;
+  /* 24px */
+
+  /* ── Borders ─────────────────────────────────────────────── */
+  --rd-border: var(--rd-ink);
+  --rd-border-width: 3px;
+  --rd-border-thin: 2px;
+  --rd-radius-sm: 4px;
+  --rd-radius-md: 8px;
+
+  /* ── Spacing ─────────────────────────────────────────────── */
+  --rd-space-1: 4px;
+  --rd-space-2: 8px;
+  --rd-space-3: 12px;
+  --rd-space-4: 16px;
+  --rd-space-5: 20px;
+  --rd-space-6: 24px;
+  --rd-space-8: 32px;
+  --rd-space-10: 40px;
+
+  /* ── Shadows ─────────────────────────────────────────────── */
+  --rd-shadow-sm: 4px 4px 0px 0px var(--rd-accent);
+  --rd-shadow-md: 6px 6px 0px 0px var(--rd-accent);
+  --rd-shadow-ink-sm: 4px 4px 0px 0px var(--rd-ink);
+}
+
+/* ── Dark mode ──────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --rd-ink: #ffffff;
+    --rd-paper: #1a1a1a;
+    --rd-bg: #0a0a0a;
+    --rd-border: #ffffff;
+    --rd-muted: #a0a0a0;
+    --rd-muted-bg: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* ── Hand-underline (active tab indicator) ──────────────────── */
+.rd-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.rd-underline::after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: -4px;
+  height: 3px;
+  background: var(--rd-accent);
+  /* A hand-drawn look via SVG mask or clip would go here;
+     for now: solid accent bar */
+}

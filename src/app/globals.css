@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "../components/tokens.css";
+
 
 :root {
   /* Rough Trade-inspired: Black & white with warm background */

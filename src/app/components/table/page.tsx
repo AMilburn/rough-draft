@@ -1,4 +1,4 @@
-import Table, { TableHead, TableBody, TableRow, TableCell } from "@/components/Table";
+import Table, { TableHead, TableBody, TableRow, TableCell } from "@/components/Table/Table";
 
 export default function TablePage() {
   return (

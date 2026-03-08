@@ -1,0 +1,34 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--rd-space-3);
+}
+
+.input {
+    width: 24px;
+    height: 24px;
+    border: var(--rd-border-width) solid var(--rd-ink);
+    background: var(--rd-paper);
+    cursor: pointer;
+    appearance: none;
+    flex-shrink: 0;
+    transition: background 0.1s, box-shadow 0.1s;
+}
+
+.input:checked {
+    background: var(--rd-ink);
+    box-shadow: 0 0 0 3px var(--rd-bg);
+}
+
+.input:focus-visible {
+    outline: 2px solid var(--rd-accent);
+    outline-offset: 2px;
+}
+
+.label {
+    font-family: var(--rd-font-body);
+    font-size: var(--rd-text-sm);
+    font-weight: 700;
+    color: var(--rd-ink);
+    cursor: pointer;
+}

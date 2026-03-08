@@ -1,7 +1,7 @@
 "use client";
 
-import { useToast } from "@/components/Toast";
-import Button from "@/components/Button";
+import { useToast } from "@/components/Toast/Toast";
+import Button from "@/components/Button/Button";
 
 function ToastDemo() {
     const { toast } = useToast();

@@ -1,5 +1,5 @@
-import Card, { CardHeader, CardContent, CardFooter } from "@/components/Card";
-import Button from "@/components/Button";
+import Card, { CardHeader, CardContent, CardFooter } from "@/components/Card/Card";
+import Button from "@/components/Button/Button";
 
 export default function CardPage() {
   return (

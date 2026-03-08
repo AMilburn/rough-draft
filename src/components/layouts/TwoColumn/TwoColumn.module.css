@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+    gap: var(--rd-space-6);
+}
+
+.aside {
+    flex-shrink: 0;
+    border-right: var(--rd-border-width) solid var(--rd-ink);
+    padding-right: var(--rd-space-6);
+}
+
+.aside-sm {
+    width: 15rem;
+}
+
+.aside-md {
+    width: 18rem;
+}
+
+.aside-lg {
+    width: 24rem;
+}
+
+.main {
+    flex: 1;
+    min-width: 0;
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import DropZone from "@/components/DropZone";
+import DropZone from "@/components/DropZone/DropZone";
 
 export default function DropZonePage() {
     const [basicFiles, setBasicFiles] = useState<File[]>([]);

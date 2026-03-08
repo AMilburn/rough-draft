@@ -1,14 +1,48 @@
 {
-  "name": "rough-draft",
+  "name": "@rough-draft/ui",
   "version": "0.1.0",
-  "private": true,
+  "description": "Rough Draft — a brutalist React component library",
+  "private": false,
+  "license": "MIT",
+  "author": "Amanda Milburn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AMilburn/rough-draft.git"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./styles": "./dist/index.css",
+    "./tokens": "./src/components/tokens.css"
+  },
+  "files": [
+    "dist",
+    "src/components/tokens.css",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d out --nojekyll"
+    "deploy": "gh-pages -d out --nojekyll",
+    "lib:build": "tsup",
+    "lib:build:watch": "tsup --watch",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm lib:build && changeset publish"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -16,6 +50,7 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.30.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -23,7 +58,9 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "gh-pages": "^6.3.0",
+    "postcss": "^8.5.8",
     "tailwindcss": "^4",
+    "tsup": "^8.5.1",
     "typescript": "^5"
   }
 }

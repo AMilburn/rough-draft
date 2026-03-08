@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Input from "@/components/Input";
-import Checkbox from "@/components/Checkbox";
-import Button from "@/components/Button";
+import Input from "@/components/Input/Input";
+import Checkbox from "@/components/Checkbox/Checkbox";
+import Button from "@/components/Button/Button";
 
 export default function FormsPage() {
   const [formData, setFormData] = useState({ name: "", email: "", agree: false });

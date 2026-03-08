@@ -1,0 +1,74 @@
+.root {
+    width: 100%;
+}
+
+.strip {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    overflow-x: auto;
+}
+
+.tab {
+    position: relative;
+    flex-shrink: 0;
+    padding: var(--rd-space-2) var(--rd-space-5);
+    font-family: var(--rd-font-mono);
+    font-size: var(--rd-text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    background: #f5f3f0;
+    color: var(--rd-ink);
+    border: var(--rd-border-width) solid var(--rd-ink);
+    border-bottom: none;
+    border-radius: var(--rd-radius-sm) var(--rd-radius-sm) 0 0;
+    cursor: pointer;
+    transition: background 0.1s, color 0.1s;
+}
+
+.tab:focus-visible {
+    outline: 2px solid var(--rd-accent);
+    outline-offset: -2px;
+}
+
+.tab:hover:not(.active):not(:disabled) {
+    filter: brightness(0.95);
+}
+
+.tab:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.active {
+    padding-top: var(--rd-space-3);
+    margin-bottom: -3px;
+    /* overlap panel's top border */
+    z-index: 1;
+}
+
+.panel {
+    position: relative;
+    z-index: 0;
+    background: var(--rd-paper);
+    border: var(--rd-border-width) solid var(--rd-ink);
+    padding: var(--rd-space-6);
+}
+
+/* Active tab label underline */
+.label-active {
+    position: relative;
+    display: inline-block;
+}
+
+.label-active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: var(--rd-accent);
+}

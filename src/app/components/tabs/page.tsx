@@ -1,7 +1,7 @@
 "use client";
 
-import Tabs from "@/components/Tabs";
-import Badge from "@/components/Badge";
+import Tabs from "@/components/Tabs/Tabs";
+import Badge from "@/components/Badge/Badge";
 
 export default function TabsPage() {
     return (

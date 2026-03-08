@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Permanent_Marker, Space_Mono, Inter } from "next/font/google";
 import "./globals.css";
-import SideNav from "@/components/SideNav";
-import { ToastProvider } from "@/components/Toast";
+import SideNav from "@/components/SideNav/SideNav";
+import { ToastProvider } from "@/components/Toast/Toast";
 
 const permanentMarker = Permanent_Marker({
   weight: ["400"],

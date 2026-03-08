@@ -1,0 +1,69 @@
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+}
+
+.positioner {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    padding: var(--rd-space-4);
+}
+
+.dialog {
+    background: var(--rd-paper);
+    border: var(--rd-border-width) solid var(--rd-ink);
+    max-width: 42rem;
+    width: 100%;
+    box-shadow: var(--rd-shadow-md);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--rd-space-6);
+    border-bottom: var(--rd-border-width) solid var(--rd-ink);
+}
+
+.title {
+    font-family: var(--rd-font-display);
+    font-size: var(--rd-text-2xl);
+    font-weight: 700;
+    color: var(--rd-ink);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.close {
+    background: none;
+    border: none;
+    font-size: var(--rd-text-2xl);
+    font-weight: 700;
+    color: var(--rd-ink);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.1s;
+}
+
+.close:hover {
+    color: var(--rd-accent);
+}
+
+.body {
+    padding: var(--rd-space-6);
+}
+
+.footer {
+    display: flex;
+    gap: var(--rd-space-4);
+    justify-content: flex-end;
+    padding: var(--rd-space-6);
+    border-top: var(--rd-border-width) solid var(--rd-ink);
+}

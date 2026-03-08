@@ -1,6 +1,6 @@
 "use client";
 
-import AudioPlayer from "@/components/AudioPlayer";
+import AudioPlayer from "@/components/AudioPlayer/AudioPlayer";
 
 // A short public domain audio sample for the demo
 const DEMO_SRC =

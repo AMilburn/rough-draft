@@ -1,0 +1,29 @@
+.card {
+    background: var(--rd-paper);
+    padding: var(--rd-space-6);
+}
+
+.default {
+    border: var(--rd-border-thin) solid rgba(0, 0, 0, 0.12);
+}
+
+.bordered {
+    border: var(--rd-border-width) solid var(--rd-ink);
+}
+
+.elevated {
+    border: var(--rd-border-thin) solid var(--rd-ink);
+    box-shadow: var(--rd-shadow-md);
+}
+
+.header {
+    margin-bottom: var(--rd-space-4);
+    padding-bottom: var(--rd-space-4);
+    border-bottom: var(--rd-border-thin) solid rgba(0, 0, 0, 0.08);
+}
+
+.footer {
+    margin-top: var(--rd-space-4);
+    padding-top: var(--rd-space-4);
+    border-top: var(--rd-border-thin) solid rgba(0, 0, 0, 0.08);
+}

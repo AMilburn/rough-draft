@@ -1,4 +1,4 @@
-import Spinner from "@/components/Spinner";
+import Spinner from "@/components/Spinner/Spinner";
 import {
   IconCheck,
   IconX,
@@ -10,9 +10,9 @@ import {
   IconMinus,
   IconAlertCircle,
   IconInfo,
-} from "@/components/Icons";
-import Container from "@/components/layouts/Container";
-import TwoColumn from "@/components/layouts/TwoColumn";
+} from "@/components/Icons/Icons";
+import Container from "@/components/layouts/Container/Container";
+import TwoColumn from "@/components/layouts/TwoColumn/TwoColumn";
 
 export default function UtilitiesPage() {
   return (
